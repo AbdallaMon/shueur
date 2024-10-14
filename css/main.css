@@ -15,7 +15,23 @@ body {
   line-height: 1.6;
   width: 100%;
   box-sizing: border-box;
+  scrollbar-width: thin; /* Sets the width of the scrollbar */
+  scrollbar-color: var(--primary-color) var(--main-background); /* Thumb and track colors */
 }
+::-webkit-scrollbar {
+  width: 15px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--main-background); /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color); /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Roundness of the scrollbar thumb */
+  border: 3px solid var(--main-background); /* Padding around the thumb */
+}
+
 h1,
 h2,
 h3,
@@ -27,6 +43,7 @@ h6 {
 section {
   width: 100%;
 }
+
 .container {
   margin-right: auto;
   margin-left: auto;
