@@ -549,7 +549,7 @@ section {
 
 .service-section {
   display: flex;
-  padding: 60px 0;
+  padding: 60px 0 0;
   @media (max-width: 1024px) {
     flex-direction: column-reverse;
   }
@@ -662,7 +662,10 @@ section {
 
 /* mobile app section */
 .mobile-app-section {
-  padding-top: 150px;
+  padding-top: 180px;
+  @media (max-width: 1024px) {
+    padding-top: 80px;
+  }
   position: relative;
 }
 .mobile-app-content {
