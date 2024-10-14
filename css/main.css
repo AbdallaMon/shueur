@@ -510,7 +510,10 @@ section {
   z-index: 1;
   flex: 1;
   @media (max-width: 1024px) {
-    padding-top: 30px;
+    padding-top: 50px;
+  }
+  @media (max-width: 576px) {
+    padding-top: 75px;
   }
 }
 .mobile-app-text h3 {
@@ -622,13 +625,13 @@ footer {
   align-items: center;
   justify-content: space-around;
   border-top: 1px solid #eaedf2;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 /* Copyright Text */
 .copyright {
   font-size: 16px;
-  margin-right: 20px;
+  margin: 0;
 }
 
 .footer-logo {
@@ -661,16 +664,4 @@ footer {
 
 .social-links a:hover {
   color: var(--secondary-color); /* Optional hover color */
-}
-
-/* Mobile View: Flex column */
-@media (max-width: 768px) {
-  .logo-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .copyright {
-    margin-bottom: 10px; /* Add space between copyright and icons */
-  }
 }
