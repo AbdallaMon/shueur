@@ -66,63 +66,91 @@
   </head>
   <body>
     <!-- Hero Section with Swiper Slider -->
-    <section class="hero-section">
-      <!-- Top Divs (One Static, One Moving) -->
-      <div class="static-div"></div>
-      <div class="moving-div">
-        <div class="container">
+    <div class="static-div"></div>
+    <header class="moving-div">
+      <div class="container">
+        <div class="navbar">
           <img src="./imgs/logo.png" alt="شعور Logo" class="logo" />
+          <nav>
+            <ul class="nav-links">
+              <li><a href="#home">الصفحه الرئيسيه</a></li>
+              <li><a href="#about-us">من نحن</a></li>
+              <li><a href="#offers">عروضنا</a></li>
+              <li><a href="#services">خدماتنا</a></li>
+              <li><a href="#mobile-app">تحميل التطبيق </a></li>
+              <li><a href="#contact-us">تواصل معنا</a></li>
+            </ul>
+            <div class="menu-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
         </div>
       </div>
+      <div class="overlay" id="overlay"></div>
+      <div class="drawer" id="drawer">
+        <button class="drawer-close">×</button>
+        <ul>
+          <li><a href="#home">الصفحه الرئيسيه</a></li>
+          <li><a href="#about-us">من نحن</a></li>
+          <li><a href="#offers">عروضنا</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#mobile-app">تحميل التطبيق </a></li>
+          <li><a href="#contact-us">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </header>
 
+    <section class="hero-section" id="home">
       <!-- Swiper Slider -->
       <div class="swiper-container hero-slider">
         <div class="swiper-wrapper">
           <!-- Slider Images -->
           <div class="swiper-slide">
             <img
-              src="./imgs/hero/slider-1.png"
+              src="./imgs/hero/slider-1.jfif"
               alt="Slider Image 1"
               class="big-screen-img"
             />
             <img
-              src="./imgs/hero/mobile-slider-1.png"
+              src="./imgs/hero/mobile-slider-1.jfif"
               alt="Slider Image 1"
               class="small-screen-img"
             />
           </div>
           <div class="swiper-slide">
             <img
-              src="./imgs/hero/slider-2.png"
+              src="./imgs/hero/slider-2.jfif"
               alt="Slider Image 2"
               class="big-screen-img"
             />
             <img
-              src="./imgs/hero/mobile-slider-2.png"
+              src="./imgs/hero/mobile-slider-2.jfif"
               alt="Slider Image 2"
               class="small-screen-img"
             />
           </div>
           <div class="swiper-slide">
             <img
-              src="./imgs/hero/slider-3.png"
+              src="./imgs/hero/slider-3.jfif"
               alt="Slider Image 3"
               class="big-screen-img"
             />
             <img
-              src="./imgs/hero/mobile-slider-3.png"
+              src="./imgs/hero/mobile-slider-3.jfif"
               alt="Slider Image 3"
               class="small-screen-img"
             />
           </div>
           <div class="swiper-slide">
             <img
-              src="./imgs/hero/slider-4.png"
+              src="./imgs/hero/slider-4.jfif"
               alt="Slider Image 4"
               class="big-screen-img"
             />
             <img
-              src="./imgs/hero/mobile-slider-4.png"
+              src="./imgs/hero/mobile-slider-4.jfif"
               alt="Slider Image 4"
               class="small-screen-img"
             />
@@ -133,8 +161,32 @@
         </div>
       </div>
     </section>
+    <section class="about-section" id="about-us">
+      <div class="container">
+        <h2 class="about-title">من نحن</h2>
+        <div class="about-text">
+          <p>
+            شعور هو أكثر من مجرد تطبيق لحجز الحفلات، إنه جسر نعبر به إلى عالم من
+            الذكريات الجميلة والعواطف المشتركة.
+          </p>
+          <p>
+            رسالتنا هي خلق لحظات لا تُنسى وتوفير تجربة احتفالية فريدة لكل
+            مناسبة.
+          </p>
+          <p>
+            نحن نؤمن بأن كل مناسبة تستحق الاحتفال، وأن كل عميل هو فرد فريد يستحق
+            تجربة شخصية.
+          </p>
+          <p>
+            فريقنا يتكون من مجموعة من الخبراء في مجال التنظيم والتخطيط للأحداث،
+            بالإضافة إلى مصممين مبدعين ومبرمجين ماهرين. نحن نعمل معًا لتحويل
+            أحلامكم إلى واقع.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <section class="offers">
+    <section class="offers" id="offers">
       <div class="container">
         <div class="offers-container">
           <!-- Top Offers -->
@@ -216,7 +268,7 @@
               بالعروض والخصومات التي تصل الى 50%، عروض رائعة و مستمرة على
               الشاليهات والمخيمات والمزارع والفلل والشقق.
             </p>
-            <a href="#contact" class="contact-btn">تواصل معنا</a>
+            <a href="#contact-us" class="contact-btn">تواصل معنا</a>
           </div>
 
           <!-- Bottom Offers -->
@@ -291,7 +343,7 @@
         </div>
       </div>
     </section>
-    <section class="service">
+    <section class="service" id="services">
       <div class="container">
         <div class="service-section">
           <div class="service-content">
@@ -373,7 +425,7 @@
         </div>
       </div>
     </section>
-    <section class="mobile-app-section">
+    <section class="mobile-app-section" id="mobile-app">
       <div class="container">
         <div class="mobile-app-content">
           <img src="./imgs/mobile-app.svg" class="mobile-app-bg mobile-big" />
@@ -384,7 +436,7 @@
           <div class="floating-mobile">
             <div class="mobile-app-text">
               <div>
-                <h3>تطبيق جاذر إن</h3>
+                <h3>تطبيق شعور</h3>
                 <h5>عيش كل التجربة ، من جوالك</h5>
               </div>
               <div class="app-links">
@@ -399,7 +451,7 @@
         </div>
       </div>
     </section>
-    <section class="contact-section" id="contact">
+    <section class="contact-section" id="contact-us">
       <div class="container">
         <div class="contact-text">
           <h2>تواصل معنا</h2>
@@ -469,7 +521,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-
+    <script src="./js/main.js"></script>
     <!-- Include Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
