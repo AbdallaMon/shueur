@@ -310,6 +310,9 @@ section {
   background-color: transparent;
   border-radius: 8px;
   font-weight: 400;
+  display: block;
+  width: fit-content;
+  margin: 15px auto;
   border: 1px solid #ffffff29;
   color: white;
   transition: 0.3s;
