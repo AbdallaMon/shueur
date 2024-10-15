@@ -5,6 +5,9 @@
   --heading-color: #050536;
   --main-background: #ffffff;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* General Styles */
 body {
@@ -42,6 +45,7 @@ h6 {
 }
 section {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -373,12 +377,10 @@ section {
 }
 
 /* about us */
-
 /* About Section */
 .about-section {
   padding: 60px 0 100px;
 }
-
 .about-title {
   font-size: 32px;
   color: var(--primary-color);
@@ -388,8 +390,8 @@ section {
 
 .about-content {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  flex-direction: column-reverse; /* Stacked by default (for mobile) */
+  align-items: center;
 }
 
 .about-text {
@@ -413,12 +415,21 @@ section {
   min-width: 300px;
   padding: 10px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .about-image img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  @media (min-width: 1024px) {
+    max-width: 80%;
+  }
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 
 /* Responsive Styles */
@@ -433,6 +444,23 @@ section {
 
   .about-text p {
     font-size: 16px;
+  }
+}
+
+/* Media Query for larger screens (starting from 1024px) */
+@media (min-width: 1024px) {
+  .about-content {
+    flex-direction: row; /* Side by side on larger screens */
+    justify-content: space-between;
+  }
+
+  .about-text {
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  .about-image {
+    text-align: left;
   }
 }
 
@@ -575,6 +603,7 @@ section {
 .service-image-container {
   height: 350px;
   position: relative;
+  overflow: hidden;
   @media (min-width: 1024px) {
     width: 530px;
     height: 530px;
@@ -589,6 +618,7 @@ section {
 }
 
 .service-content {
+  overflow: hidden;
   flex: 1;
   padding: 10px;
 }
@@ -729,6 +759,7 @@ section {
   height: 628px;
   align-self: flex-end;
   display: block;
+  overflow: hidden;
   @media (max-width: 1024px) {
     width: 272px;
     height: 416px;
@@ -787,31 +818,37 @@ section {
   }
 }
 
-/* Contact us */
-/* General Contact Section Styling */
+/* Styling for Contact Us Section */
 .contact-section {
   padding: 60px 0;
   background-color: #f9f9f9;
   margin-top: 100px;
 }
-.contact-text {
+
+.contact-content {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Stacked by default (for mobile) */
   align-items: center;
-  flex-direction: column;
 }
+
 .contact-text h2 {
   font-size: 28px;
   color: var(--primary-color);
   margin-bottom: 15px;
-  text-align: center;
 }
 
 .contact-text p {
   font-size: 16px;
   color: #666;
+}
+
+.contact-img-wrapper {
   margin-bottom: 20px;
-  text-align: center;
+}
+
+.contact-img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Contact List */
@@ -824,7 +861,6 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   width: 200px;
   margin-bottom: 15px;
   flex-direction: row-reverse;
@@ -843,22 +879,50 @@ section {
   font-size: 24px;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
+/* Media Query for larger screens */
+@media (min-width: 1024px) {
+  .contact-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-text {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .contact-img-wrapper {
+    flex: 1;
+    text-align: right;
+  }
+
+  .contact-img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 1023px) {
   .contact-list li {
     justify-content: flex-start;
     font-size: 16px;
+  }
+  .contact-img-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .contact-img {
+    max-width: 80%;
   }
 }
 
 /* Footer Styling */
 footer {
-  background-color: white; /* Primary color for the background */
+  background-color: white;
   padding: 25px 0 0;
   color: var(--primary-color);
 }
 
-/* Logo Container: Flexbox for larger screens */
 .footer-content {
   display: flex;
   align-items: center;
@@ -867,7 +931,6 @@ footer {
   padding: 10px 0;
 }
 
-/* Copyright Text */
 .copyright {
   font-size: 16px;
   margin: 0;
@@ -876,7 +939,6 @@ footer {
 .footer-logo {
   width: 80px;
 }
-/* Social Links */
 .social-links {
   display: flex;
   gap: 15px;
