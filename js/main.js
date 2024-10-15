@@ -5,7 +5,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const overlay = document.getElementById("overlay");
   const menuIcon = document.querySelector(".menu-icon");
   const closeIcon = document.querySelector(".drawer .drawer-close");
-
+  const logo = document.querySelector(".navbar .logo");
+  const loaderWrapper = document.getElementById("loader-wrapper");
+  const loaderLogo = document.querySelector(".loader-logo");
+  const header = document.querySelector(".moving-div");
+  const container = document.querySelector(".container");
+  const loadingIndicator = document.querySelector(".loading-indicator");
   function toggleMenu() {
     drawer.classList.toggle("open");
     overlay.classList.toggle("open");
@@ -14,6 +19,45 @@ document.addEventListener("DOMContentLoaded", async () => {
   menuIcon.addEventListener("click", toggleMenu);
   closeIcon.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", toggleMenu);
+
+  gsap.to(loaderWrapper, {
+    y: "-100%",
+    delay: 1,
+    duration: 1.5,
+    ease: "power4.inOut",
+    onComplete: () => {
+      loaderWrapper.style.display = "none";
+    },
+  });
+
+  gsap.to(loadingIndicator, {
+    delay: 0.5,
+    duration: 1,
+    opacity: 0,
+    ease: "power4.inOut",
+  });
+
+  const isSmallScreen = window.innerWidth <= 1024; // Example breakpoint for smaller screens
+
+  gsap.to(loaderLogo, {
+    delay: 0.5,
+    duration: 1,
+    transform: "none",
+    height: isSmallScreen ? 75 : 89, // Adjust height for smaller screens
+    top: isSmallScreen ? 5 : 7, // Adjust top position for smaller screens
+    ease: "power4.inOut",
+    left:
+      (header.offsetWidth - container.offsetWidth) / 2 +
+      (isSmallScreen ? 24 : 35),
+    onComplete: () => {
+      window.setTimeout(() => {
+        document.body.style.overflow = "auto";
+        loaderLogo.style.display = "none";
+        const logo = document.querySelector(".logo"); // Make sure you have a .logo element
+        logo.style.opacity = 1;
+      }, 500);
+    },
+  });
 
   gsap.registerPlugin(ScrollTrigger);
 
