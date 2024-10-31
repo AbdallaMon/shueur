@@ -37,18 +37,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     ease: "power4.inOut",
   });
 
-  const isSmallScreen = window.innerWidth <= 1024; // Example breakpoint for smaller screens
+  const isSmallScreen = window.innerWidth <= 1024;
 
   gsap.to(loaderLogo, {
     delay: 0.5,
     duration: 1,
     transform: "none",
-    height: isSmallScreen ? 75 : 89, // Adjust height for smaller screens
-    top: isSmallScreen ? 5 : 7, // Adjust top position for smaller screens
+    height: isSmallScreen ? 140 : 170,
+    top: isSmallScreen ? -28 : -31,
     ease: "power4.inOut",
     left:
       (header.offsetWidth - container.offsetWidth) / 2 +
-      (isSmallScreen ? 24 : 35),
+      (isSmallScreen ? 21 : 30),
     onComplete: () => {
       window.setTimeout(() => {
         document.body.style.overflow = "auto";
